@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use("/hospitals", require("./routes/hospital.routes"));
+app.use("/bookings", require("./routes/bookings.routes"));
 
 app.use((req, res, next) => {
   const error = new Error("Not Found!");
