@@ -36,7 +36,6 @@ const Hospital = (props) => {
           title="Book Now"
           color="#841584"
         />
-        <Button title="Show Bookings" />
       </View>
     </TouchableOpacity>
   );

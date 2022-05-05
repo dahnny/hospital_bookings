@@ -8,13 +8,14 @@ import {
   Platform,
   Alert,
 } from "react-native";
+// import Toast from "react-native-root-toast";
 import { Formik } from "formik";
 import * as ImagePicker from "expo-image-picker";
 import { useState, useEffect } from "react";
 import Constants from "expo-constants";
 import { uploadBooking, uploadImage } from "../utils/services";
 
-const Booking = ({route}) => {
+const Booking = ({navigation,route}) => {
   const [image, setImage] = useState(null);
   const {hospitalId} = route.params;
   useEffect(async () => {
@@ -60,7 +61,9 @@ const Booking = ({route}) => {
             photo: data.secure_url,
             hospitalId
           });
-          console.log(response)
+          navigation.goBack();
+          Alert.alert("Booking successful")
+          // Toast.show('Booking created successfully');
         }}
       >
         {(props) => (

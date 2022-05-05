@@ -1,6 +1,6 @@
 import { baseUrl } from "./constants";
 import axios from "axios";
-// import Toast from "react-native-root-toast";
+import Toast from "react-native-root-toast";
 
 export const findAllHospitals = async () => {
   try {
@@ -9,7 +9,7 @@ export const findAllHospitals = async () => {
     return response.data;
   } catch (error) {
     console.log(error);
-    // Toast.show("Error fetching data", {error})
+    Toast.show("Error fetching data", {error})
   }
 };
 
